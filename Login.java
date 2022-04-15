@@ -7,4 +7,9 @@ public class Login {
         this.username = username;
         this.password = password;
     }
+
+    public String print() {
+
+        return "Username is: " + this.username + "\nPassword is: " + this.password;
+    }
 }

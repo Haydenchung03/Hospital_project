@@ -1,4 +1,9 @@
 public class Login {
-    
-    public Login()
+
+    public String username;
+
+    public Login(String username) {
+        this.username = username;
+
+    }
 }

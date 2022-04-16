@@ -14,14 +14,17 @@ public class Main {
             if (option.equalsIgnoreCase("LOGIN")) {
 
                 System.out.println("Please enter in a username: ");
-
                 String username = scan.nextLine();
-
                 System.out.println("Please enter in a password: ");
                 String password = scan.nextLine();
-
                 Login login = new Login(username, password);
                 System.out.println(login.print());
+
+                if (username.equals("ROAHayden") && password.equals("THISISATEST")) {
+                    System.out.println("Hello Doctor! What do you want to do?");
+                } else {
+                    File file = new File("PatientLogin.txt");
+                }
             } else if (option.equalsIgnoreCase("CREATE ACCOUNT")) {
 
                 System.out.println("Enter in a username");

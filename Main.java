@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -29,12 +30,22 @@ public class Main {
                 System.out.println("Re-enter password");
                 String rePassword = scan.nextLine();
 
+                if (newPassword.equals(rePassword)) {
+                    try {
+                        BufferedWriter userInfo = new BufferedWriter(new FileWriter(new File("User_info.txt"), true));
+                        userInfo.write("\n" + newUsername + ":" + rePassword);
+                        userInfo.close();
+                    } catch (FileNotFoundException e) {
+                        System.out.println("File not found!");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
             } else if (option.equalsIgnoreCase("Quit")) {
                 System.out.println("Thank you for using our program! Thank you!");
                 break;
             }
         }
-
         scan.close();
     }
 }

@@ -32,7 +32,8 @@ public class Main {
 
                 if (newPassword.equals(rePassword)) {
                     try {
-                        BufferedWriter userInfo = new BufferedWriter(new FileWriter(new File("User_info.txt"), true));
+                        BufferedWriter userInfo = new BufferedWriter(
+                                new FileWriter(new File("PacientLogin.txt"), true));
                         userInfo.write("\n" + newUsername + ":" + rePassword);
                         userInfo.close();
                     } catch (FileNotFoundException e) {
